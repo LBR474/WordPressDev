@@ -2896,10 +2896,10 @@ const isEditedPostAutosaveable = (0,external_wp_data_namespaceObject.createRegis
 
   if (hasChangedContent(state)) {
     return true;
-  } // If the title or excerpt has changed, the post is autosaveable.
+  } // If title, excerpt, or meta have changed, the post is autosaveable.
 
 
-  return ['title', 'excerpt'].some(field => getPostRawValue(autosave[field]) !== getEditedPostAttribute(state, field));
+  return ['title', 'excerpt', 'meta'].some(field => getPostRawValue(autosave[field]) !== getEditedPostAttribute(state, field));
 });
 /**
  * Return true if the post being edited is being scheduled. Preferring the
@@ -8840,7 +8840,7 @@ function usePostVisibilityLabel() {
   return visibilityOptions[visibility]?.label;
 }
 
-;// CONCATENATED MODULE: ./node_modules/date-fns/node_modules/@babel/runtime/helpers/esm/typeof.js
+;// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
 function _typeof(obj) {
   "@babel/helpers - typeof";
 
@@ -11595,6 +11595,18 @@ function PostSwitchToDraftButton({
   };
 })])(PostSwitchToDraftButton));
 
+;// CONCATENATED MODULE: external ["wp","privateApis"]
+var external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
+;// CONCATENATED MODULE: ./node_modules/@wordpress/editor/build-module/lock-unlock.js
+/**
+ * WordPress dependencies
+ */
+
+const {
+  lock,
+  unlock
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I know using unstable features means my plugin or theme will inevitably break on the next WordPress release.', '@wordpress/editor');
+
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/editor/build-module/components/post-sync-status/index.js
 
 
@@ -11609,6 +11621,7 @@ function PostSwitchToDraftButton({
 /**
  * Internal dependencies
  */
+
 
 
 function PostSyncStatus() {
@@ -11676,6 +11689,9 @@ function PostSyncStatusModal() {
     return null;
   }
 
+  const {
+    ReusableBlocksRenameHint
+  } = unlock(external_wp_blockEditor_namespaceObject.privateApis);
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_element_namespaceObject.Fragment, null, isModalOpen && (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Modal, {
     title: (0,external_wp_i18n_namespaceObject.__)('Set pattern sync status'),
     onRequestClose: () => {
@@ -11690,7 +11706,7 @@ function PostSyncStatusModal() {
     }
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.__experimentalVStack, {
     spacing: "5"
-  }, (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.ReusableBlocksRenameHint, null), (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.ToggleControl, {
+  }, (0,external_wp_element_namespaceObject.createElement)(ReusableBlocksRenameHint, null), (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.ToggleControl, {
     label: (0,external_wp_i18n_namespaceObject.__)('Synced'),
     help: (0,external_wp_i18n_namespaceObject.__)('Editing the pattern will update it anywhere it is used.'),
     checked: !syncType,
@@ -13184,18 +13200,6 @@ function useBlockEditorSettings(settings, hasTemplate) {
 }
 
 /* harmony default export */ var use_block_editor_settings = (useBlockEditorSettings);
-
-;// CONCATENATED MODULE: external ["wp","privateApis"]
-var external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
-;// CONCATENATED MODULE: ./node_modules/@wordpress/editor/build-module/lock-unlock.js
-/**
- * WordPress dependencies
- */
-
-const {
-  lock,
-  unlock
-} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I know using unstable features means my plugin or theme will inevitably break on the next WordPress release.', '@wordpress/editor');
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/editor/build-module/components/provider/index.js
 

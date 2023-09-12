@@ -3871,7 +3871,7 @@ function ManagePatternsMenuItem() {
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.MenuItem, {
     role: "menuitem",
     href: url
-  }, (0,external_wp_i18n_namespaceObject.__)('Manage Patterns'));
+  }, (0,external_wp_i18n_namespaceObject.__)('Manage patterns'));
 }
 
 (0,external_wp_plugins_namespaceObject.registerPlugin)('edit-post', {
@@ -6117,7 +6117,7 @@ const layout = (0,external_wp_element_namespaceObject.createElement)(external_wp
 }));
 /* harmony default export */ var library_layout = (layout);
 
-;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/header/document-title/index.js
+;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/header/document-actions/index.js
 
 
 /**
@@ -6136,7 +6136,7 @@ const layout = (0,external_wp_element_namespaceObject.createElement)(external_wp
 
 
 
-function DocumentTitle() {
+function DocumentActions() {
   const {
     template,
     isEditing
@@ -6176,19 +6176,19 @@ function DocumentTitle() {
   }
 
   return (0,external_wp_element_namespaceObject.createElement)("div", {
-    className: "edit-post-document-title"
-  }, (0,external_wp_element_namespaceObject.createElement)("span", {
-    className: "edit-post-document-title__left"
+    className: "edit-post-document-actions"
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Button, {
+    className: "edit-post-document-actions__back",
     onClick: () => {
       clearSelectedBlock();
       setIsEditingTemplate(false);
     },
     icon: (0,external_wp_i18n_namespaceObject.isRTL)() ? chevron_right_small : chevron_left_small
-  }, (0,external_wp_i18n_namespaceObject.__)('Back'))), (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Button, {
-    className: "edit-post-document-title__title",
+  }, (0,external_wp_i18n_namespaceObject.__)('Back')), (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Button, {
+    className: "edit-post-document-actions__command",
     onClick: () => openCommandCenter()
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.__experimentalHStack, {
+    className: "edit-post-document-actions__title",
     spacing: 1,
     justify: "center"
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.BlockIcon, {
@@ -6198,13 +6198,12 @@ function DocumentTitle() {
     as: "h1"
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.VisuallyHidden, {
     as: "span"
-  }, (0,external_wp_i18n_namespaceObject.__)('Editing template: ')), templateTitle))), (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Button, {
-    className: "edit-post-document-title__shortcut",
-    onClick: () => openCommandCenter()
-  }, external_wp_keycodes_namespaceObject.displayShortcut.primary('k')));
+  }, (0,external_wp_i18n_namespaceObject.__)('Editing template: ')), templateTitle)), (0,external_wp_element_namespaceObject.createElement)("span", {
+    className: "edit-post-document-actions__shortcut"
+  }, external_wp_keycodes_namespaceObject.displayShortcut.primary('k'))));
 }
 
-/* harmony default export */ var document_title = (DocumentTitle);
+/* harmony default export */ var document_actions = (DocumentActions);
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/edit-post/build-module/components/header/index.js
 
@@ -6288,8 +6287,8 @@ function Header({
     },
     className: "edit-post-header__toolbar"
   }, (0,external_wp_element_namespaceObject.createElement)(header_toolbar, null), (0,external_wp_element_namespaceObject.createElement)("div", {
-    className: "edit-post-header__document-title"
-  }, (0,external_wp_element_namespaceObject.createElement)(document_title, null))), (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.__unstableMotion.div, {
+    className: "edit-post-header__center"
+  }, (0,external_wp_element_namespaceObject.createElement)(document_actions, null))), (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.__unstableMotion.div, {
     variants: slideY,
     transition: {
       type: 'tween',
@@ -6636,11 +6635,11 @@ function ListViewSidebar() {
       selectOnMove: false,
       tabs: [{
         name: 'list-view',
-        title: 'List View',
+        title: (0,external_wp_i18n_namespaceObject._x)('List View', 'Post overview'),
         className: 'edit-post-sidebar__panel-tab'
       }, {
         name: 'outline',
-        title: 'Outline',
+        title: (0,external_wp_i18n_namespaceObject._x)('Outline', 'Post overview'),
         className: 'edit-post-sidebar__panel-tab'
       }]
     }, currentTab => (0,external_wp_element_namespaceObject.createElement)("div", {
@@ -8948,6 +8947,10 @@ function StartPageOptions() {
 
 
 
+
+const {
+  getLayoutStyles
+} = unlock(external_wp_blockEditor_namespaceObject.privateApis);
 const interfaceLabels = {
   /* translators: accessibility text for the editor top bar landmark region. */
   header: (0,external_wp_i18n_namespaceObject.__)('Editor top bar'),
@@ -8965,9 +8968,7 @@ const interfaceLabels = {
   footer: (0,external_wp_i18n_namespaceObject.__)('Editor footer')
 };
 
-function Layout({
-  styles
-}) {
+function Layout() {
   const isMobileViewport = (0,external_wp_compose_namespaceObject.useViewportMatch)('medium', '<');
   const isHugeViewport = (0,external_wp_compose_namespaceObject.useViewportMatch)('huge', '>=');
   const isLargeViewport = (0,external_wp_compose_namespaceObject.useViewportMatch)('large');
@@ -8995,14 +8996,43 @@ function Layout({
     isDistractionFree,
     showBlockBreadcrumbs,
     isTemplateMode,
-    documentLabel
+    documentLabel,
+    styles
   } = (0,external_wp_data_namespaceObject.useSelect)(select => {
     const {
       getEditorSettings,
       getPostTypeLabel
     } = select(external_wp_editor_namespaceObject.store);
+    const {
+      isFeatureActive
+    } = select(store_store);
     const editorSettings = getEditorSettings();
     const postTypeLabel = getPostTypeLabel();
+    const hasThemeStyles = isFeatureActive('themeStyles');
+    const themeStyles = [];
+    const presetStyles = [];
+    editorSettings.styles?.forEach(style => {
+      if (!style.__unstableType || style.__unstableType === 'theme') {
+        themeStyles.push(style);
+      } else {
+        presetStyles.push(style);
+      }
+    });
+    const defaultEditorStyles = [...editorSettings.defaultEditorStyles, ...presetStyles]; // If theme styles are not present or displayed, ensure that
+    // base layout styles are still present in the editor.
+
+    if (!editorSettings.disableLayoutStyles && !(hasThemeStyles && themeStyles.length)) {
+      defaultEditorStyles.push({
+        css: getLayoutStyles({
+          style: {},
+          selector: 'body',
+          hasBlockGapSupport: false,
+          hasFallbackGapSupport: true,
+          fallbackGapValue: '0.5em'
+        })
+      });
+    }
+
     return {
       isTemplateMode: select(store_store).isEditingTemplate(),
       hasFixedToolbar: select(store_store).isFeatureActive('fixedToolbar'),
@@ -9019,7 +9049,8 @@ function Layout({
       isDistractionFree: select(store_store).isFeatureActive('distractionFree'),
       showBlockBreadcrumbs: select(store_store).isFeatureActive('showBlockBreadcrumbs'),
       // translators: Default label for the Document in the Block Breadcrumb.
-      documentLabel: postTypeLabel || (0,external_wp_i18n_namespaceObject._x)('Document', 'noun')
+      documentLabel: postTypeLabel || (0,external_wp_i18n_namespaceObject._x)('Document', 'noun'),
+      styles: hasThemeStyles && themeStyles.length ? editorSettings.styles : defaultEditorStyles
     };
   }, []);
 
@@ -9472,7 +9503,6 @@ function useCommonCommands() {
 
 
 
-
 /**
  * Internal dependencies
  */
@@ -9485,9 +9515,6 @@ function useCommonCommands() {
 const {
   ExperimentalEditorProvider
 } = unlock(external_wp_editor_namespaceObject.privateApis);
-const {
-  getLayoutStyles
-} = unlock(external_wp_blockEditor_namespaceObject.privateApis);
 const {
   useCommands
 } = unlock(external_wp_coreCommands_namespaceObject.privateApis);
@@ -9506,7 +9533,6 @@ function Editor({
     focusMode,
     isDistractionFree,
     hasInlineToolbar,
-    hasThemeStyles,
     post,
     preferredStyleVariations,
     hiddenBlockTypes,
@@ -9519,7 +9545,6 @@ function Editor({
 
     const {
       isFeatureActive,
-      __experimentalGetPreviewDeviceType,
       isEditingTemplate,
       getEditedPostTemplate,
       getHiddenBlockTypes
@@ -9554,11 +9579,10 @@ function Editor({
     const isViewable = (_getPostType$viewable = getPostType(postType)?.viewable) !== null && _getPostType$viewable !== void 0 ? _getPostType$viewable : false;
     const canEditTemplate = canUser('create', 'templates');
     return {
-      hasFixedToolbar: isFeatureActive('fixedToolbar') || __experimentalGetPreviewDeviceType() !== 'Desktop',
+      hasFixedToolbar: isFeatureActive('fixedToolbar'),
       focusMode: isFeatureActive('focusMode'),
       isDistractionFree: isFeatureActive('distractionFree'),
       hasInlineToolbar: isFeatureActive('inlineToolbar'),
-      hasThemeStyles: isFeatureActive('themeStyles'),
       preferredStyleVariations: select(external_wp_preferences_namespaceObject.store).get('core/edit-post', 'preferredStyleVariations'),
       hiddenBlockTypes: getHiddenBlockTypes(),
       blockTypes: getBlockTypes(),
@@ -9602,33 +9626,6 @@ function Editor({
 
     return result;
   }, [settings, hasFixedToolbar, hasInlineToolbar, focusMode, isDistractionFree, hiddenBlockTypes, blockTypes, preferredStyleVariations, setIsInserterOpened, updatePreferredStyleVariations, keepCaretInsideBlock]);
-  const styles = (0,external_wp_element_namespaceObject.useMemo)(() => {
-    const themeStyles = [];
-    const presetStyles = [];
-    settings.styles?.forEach(style => {
-      if (!style.__unstableType || style.__unstableType === 'theme') {
-        themeStyles.push(style);
-      } else {
-        presetStyles.push(style);
-      }
-    });
-    const defaultEditorStyles = [...settings.defaultEditorStyles, ...presetStyles]; // If theme styles are not present or displayed, ensure that
-    // base layout styles are still present in the editor.
-
-    if (!settings.disableLayoutStyles && !(hasThemeStyles && themeStyles.length)) {
-      defaultEditorStyles.push({
-        css: getLayoutStyles({
-          style: {},
-          selector: 'body',
-          hasBlockGapSupport: false,
-          hasFallbackGapSupport: true,
-          fallbackGapValue: '0.5em'
-        })
-      });
-    }
-
-    return hasThemeStyles && themeStyles.length ? settings.styles : defaultEditorStyles;
-  }, [settings, hasThemeStyles]);
 
   if (!post) {
     return null;
@@ -9643,9 +9640,7 @@ function Editor({
     ...props
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_editor_namespaceObject.ErrorBoundary, null, (0,external_wp_element_namespaceObject.createElement)(external_wp_commands_namespaceObject.CommandMenu, null), (0,external_wp_element_namespaceObject.createElement)(EditorInitialization, {
     postId: postId
-  }), (0,external_wp_element_namespaceObject.createElement)(components_layout, {
-    styles: styles
-  })), (0,external_wp_element_namespaceObject.createElement)(external_wp_editor_namespaceObject.PostLockedModal, null))));
+  }), (0,external_wp_element_namespaceObject.createElement)(components_layout, null)), (0,external_wp_element_namespaceObject.createElement)(external_wp_editor_namespaceObject.PostLockedModal, null))));
 }
 
 /* harmony default export */ var editor = (Editor);
@@ -9952,9 +9947,10 @@ function initializeEditor(id, postType, postId, settings, initialEdits) {
   });
 
   (0,external_wp_data_namespaceObject.dispatch)(external_wp_blocks_namespaceObject.store).__experimentalReapplyBlockTypeFilters(); // Check if the block list view should be open by default.
+  // If `distractionFree` mode is enabled, the block list view should not be open.
 
 
-  if ((0,external_wp_data_namespaceObject.select)(store_store).isFeatureActive('showListViewByDefault')) {
+  if ((0,external_wp_data_namespaceObject.select)(store_store).isFeatureActive('showListViewByDefault') && !(0,external_wp_data_namespaceObject.select)(store_store).isFeatureActive('distractionFree')) {
     (0,external_wp_data_namespaceObject.dispatch)(store_store).setIsListViewOpened(true);
   }
 

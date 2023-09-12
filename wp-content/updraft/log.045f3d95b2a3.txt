@@ -1,0 +1,14 @@
+0000.001 () Opened log file at time: Sun, 27 Aug 2023 22:34:28 +0000 on http://localhost:8888/WordPressDev
+0000.001 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.23.9 WP: 6.3 PHP: 7.4.33 (apache2handler, Darwin Fakes-iMac.local 22.6.0 Darwin Kernel Version 22.6.0: Wed Jul  5 22:22:52 PDT 2023; root:xnu-8796.141.3~6/RELEASE_ARM64_T8103 arm64) MySQL: 5.7.39 (max packet size=33554432) WPLANG: en_AU Server: Apache/2.4.54 (Unix) OpenSSL/1.0.2u PHP/7.4.33 mod_wsgi/3.5 Python/2.7.18 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.11 Perl/v5.30.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 11.9M | 2M) multisite: N openssl: OpenSSL 1.0.2u  20 Dec 2019 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.001 () Free space on disk containing Updraft's temporary directory: 143477.9 MB
+0000.003 () Restore setup, now closing connection and starting restore over AJAX.
+0000.001 () Opened log file at time: Sun, 27 Aug 2023 22:34:29 +0000 on http://localhost:8888/WordPressDev
+0000.001 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.23.9 WP: 6.3 PHP: 7.4.33 (apache2handler, Darwin Fakes-iMac.local 22.6.0 Darwin Kernel Version 22.6.0: Wed Jul  5 22:22:52 PDT 2023; root:xnu-8796.141.3~6/RELEASE_ARM64_T8103 arm64) MySQL: 5.7.39 (max packet size=33554432) WPLANG: en_AU Server: Apache/2.4.54 (Unix) OpenSSL/1.0.2u PHP/7.4.33 mod_wsgi/3.5 Python/2.7.18 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.11 Perl/v5.30.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 10.8M | 2M) multisite: N openssl: OpenSSL 1.0.2u  20 Dec 2019 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.001 () Free space on disk containing Updraft's temporary directory: 143477.9 MB
+0000.002 () Ensuring WP_Filesystem is setup for a restore
+0000.002 () WP_Filesystem is setup and ready for a restore
+0000.004 () Restore job started. Entities to restore: plugins, themes, uploads, others, db. Restore options: {"include_unspecified_tables":false,"tables_to_restore":["wp_options","wp_users","wp_usermeta","wp_commentmeta","wp_comments","wp_links","wp_postmeta","wp_posts","wp_term_relationships","wp_term_taxonomy","wp_termmeta","wp_terms","wp_booking","wp_booking_dates_props","wp_bookingdates","wp_e_events"],"tables_to_skip":[],"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.005 () Error message: Existing unremoved folders from a previous restore exist (please use the "Delete old folders" button to delete them before trying again): /Applications/MAMP/htdocs/WordPressDev/wp-content/updraft/plugins-old
+0000.008 () Restore failed...
+0000.008 () Error message: Existing unremoved folders from a previous restore exist (please use the "Delete old folders" button to delete them before trying again): /Applications/MAMP/htdocs/WordPressDev/wp-content/updraft/plugins-old
+0000.008 () Restore failed

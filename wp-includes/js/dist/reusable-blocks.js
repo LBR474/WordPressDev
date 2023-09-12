@@ -39,7 +39,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "ReusableBlocksMenuItems": function() { return /* reexport */ reusable_blocks_menu_items; },
+  "ReusableBlocksMenuItems": function() { return /* reexport */ ReusableBlocksMenuItems; },
   "store": function() { return /* reexport */ store; }
 });
 
@@ -92,9 +92,9 @@ const __experimentalConvertBlockToStatic = clientId => ({
 /**
  * Returns a generator converting one or more static blocks into a pattern.
  *
- * @param {string[]}           clientIds The client IDs of the block to detach.
- * @param {string}             title     Pattern title.
- * @param {'fully'|'unsynced'} syncType  They way block is synced, current 'fully' and 'unsynced'.
+ * @param {string[]}             clientIds The client IDs of the block to detach.
+ * @param {string}               title     Pattern title.
+ * @param {undefined|'unsynced'} syncType  They way block is synced, current undefined (synced) and 'unsynced'.
  */
 
 const __experimentalConvertBlocksToReusable = (clientIds, title, syncType) => async ({
@@ -248,6 +248,17 @@ const symbol = (0,external_wp_element_namespaceObject.createElement)(external_wp
 var external_wp_notices_namespaceObject = window["wp"]["notices"];
 ;// CONCATENATED MODULE: external ["wp","coreData"]
 var external_wp_coreData_namespaceObject = window["wp"]["coreData"];
+;// CONCATENATED MODULE: external ["wp","privateApis"]
+var external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
+;// CONCATENATED MODULE: ./node_modules/@wordpress/reusable-blocks/build-module/lock-unlock.js
+/**
+ * WordPress dependencies
+ */
+
+const {
+  unlock
+} = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I know using unstable features means my plugin or theme will inevitably break on the next WordPress release.', '@wordpress/reusable-blocks');
+
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/reusable-blocks/build-module/components/reusable-blocks-menu-items/reusable-block-convert-button.js
 
 
@@ -268,6 +279,7 @@ var external_wp_coreData_namespaceObject = window["wp"]["coreData"];
  */
 
 
+
 /**
  * Menu control to convert block(s) to reusable block.
  *
@@ -281,7 +293,12 @@ function ReusableBlockConvertButton({
   clientIds,
   rootClientId
 }) {
-  const [syncType, setSyncType] = (0,external_wp_element_namespaceObject.useState)('unsynced');
+  const {
+    useReusableBlocksRenameHint,
+    ReusableBlocksRenameHint
+  } = unlock(external_wp_blockEditor_namespaceObject.privateApis);
+  const showRenameHint = useReusableBlocksRenameHint();
+  const [syncType, setSyncType] = (0,external_wp_element_namespaceObject.useState)(undefined);
   const [isModalOpen, setIsModalOpen] = (0,external_wp_element_namespaceObject.useState)(false);
   const [title, setTitle] = (0,external_wp_element_namespaceObject.useState)('');
   const canConvert = (0,external_wp_data_namespaceObject.useSelect)(select => {
@@ -292,14 +309,16 @@ function ReusableBlockConvertButton({
     } = select(external_wp_coreData_namespaceObject.store);
     const {
       getBlocksByClientId,
-      canInsertBlockType
+      canInsertBlockType,
+      getBlockRootClientId
     } = select(external_wp_blockEditor_namespaceObject.store);
+    const rootId = rootClientId || (clientIds.length > 0 ? getBlockRootClientId(clientIds[0]) : undefined);
     const blocks = (_getBlocksByClientId = getBlocksByClientId(clientIds)) !== null && _getBlocksByClientId !== void 0 ? _getBlocksByClientId : [];
     const isReusable = blocks.length === 1 && blocks[0] && (0,external_wp_blocks_namespaceObject.isReusableBlock)(blocks[0]) && !!select(external_wp_coreData_namespaceObject.store).getEntityRecord('postType', 'wp_block', blocks[0].attributes.ref);
 
     const _canConvert = // Hide when this is already a reusable block.
     !isReusable && // Hide when reusable blocks are disabled.
-    canInsertBlockType('core/block', rootClientId) && blocks.every(block => // Guard against the case where a regular block has *just* been converted.
+    canInsertBlockType('core/block', rootId) && blocks.every(block => // Guard against the case where a regular block has *just* been converted.
     !!block && // Hide on invalid blocks.
     block.isValid && // Hide when block doesn't support being made reusable.
     (0,external_wp_blocks_namespaceObject.hasBlockSupport)(block.name, 'reusable', true)) && // Hide when current doesn't have permission to do that.
@@ -317,7 +336,7 @@ function ReusableBlockConvertButton({
   const onConvert = (0,external_wp_element_namespaceObject.useCallback)(async function (reusableBlockTitle) {
     try {
       await convertBlocksToReusable(clientIds, reusableBlockTitle, syncType);
-      createSuccessNotice(syncType === 'fully' ? (0,external_wp_i18n_namespaceObject.sprintf)( // translators: %s: the name the user has given to the pattern.
+      createSuccessNotice(!syncType ? (0,external_wp_i18n_namespaceObject.sprintf)( // translators: %s: the name the user has given to the pattern.
       (0,external_wp_i18n_namespaceObject.__)('Synced Pattern created: %s'), reusableBlockTitle) : (0,external_wp_i18n_namespaceObject.sprintf)( // translators: %s: the name the user has given to the pattern.
       (0,external_wp_i18n_namespaceObject.__)('Unsynced Pattern created: %s'), reusableBlockTitle), {
         type: 'snackbar',
@@ -340,7 +359,7 @@ function ReusableBlockConvertButton({
   }) => (0,external_wp_element_namespaceObject.createElement)(external_wp_element_namespaceObject.Fragment, null, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.MenuItem, {
     icon: library_symbol,
     onClick: () => setIsModalOpen(true)
-  }, (0,external_wp_i18n_namespaceObject.__)('Create pattern/reusable block')), isModalOpen && (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Modal, {
+  }, showRenameHint ? (0,external_wp_i18n_namespaceObject.__)('Create pattern/reusable block') : (0,external_wp_i18n_namespaceObject.__)('Create pattern')), isModalOpen && (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Modal, {
     title: (0,external_wp_i18n_namespaceObject.__)('Create pattern'),
     onRequestClose: () => {
       setIsModalOpen(false);
@@ -357,7 +376,7 @@ function ReusableBlockConvertButton({
     }
   }, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.__experimentalVStack, {
     spacing: "5"
-  }, (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.ReusableBlocksRenameHint, null), (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.TextControl, {
+  }, (0,external_wp_element_namespaceObject.createElement)(ReusableBlocksRenameHint, null), (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.TextControl, {
     __nextHasNoMarginBottom: true,
     label: (0,external_wp_i18n_namespaceObject.__)('Name'),
     value: title,
@@ -366,9 +385,9 @@ function ReusableBlockConvertButton({
   }), (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.ToggleControl, {
     label: (0,external_wp_i18n_namespaceObject.__)('Synced'),
     help: (0,external_wp_i18n_namespaceObject.__)('Editing the pattern will update it anywhere it is used.'),
-    checked: syncType === 'fully',
+    checked: !syncType,
     onChange: () => {
-      setSyncType(syncType === 'fully' ? 'unsynced' : 'fully');
+      setSyncType(!syncType ? 'unsynced' : undefined);
     }
   }), (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.__experimentalHStack, {
     justify: "right"
@@ -451,7 +470,7 @@ function ReusableBlocksManageButton({
 
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.BlockSettingsMenuControls, null, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.MenuItem, {
     href: managePatternsUrl
-  }, (0,external_wp_i18n_namespaceObject.__)('Manage Patterns')), canRemove && (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.MenuItem, {
+  }, (0,external_wp_i18n_namespaceObject.__)('Manage patterns')), canRemove && (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.MenuItem, {
     onClick: () => convertBlockToStatic(clientId)
   }, innerBlockCount > 1 ? (0,external_wp_i18n_namespaceObject.__)('Detach patterns') : (0,external_wp_i18n_namespaceObject.__)('Detach pattern')));
 }
@@ -472,11 +491,10 @@ function ReusableBlocksManageButton({
 
 
 
-
 function ReusableBlocksMenuItems({
-  clientIds,
   rootClientId
 }) {
+  const clientIds = (0,external_wp_data_namespaceObject.useSelect)(select => select(external_wp_blockEditor_namespaceObject.store).getSelectedBlockClientIds(), []);
   return (0,external_wp_element_namespaceObject.createElement)(external_wp_element_namespaceObject.Fragment, null, (0,external_wp_element_namespaceObject.createElement)(ReusableBlockConvertButton, {
     clientIds: clientIds,
     rootClientId: rootClientId
@@ -484,15 +502,6 @@ function ReusableBlocksMenuItems({
     clientId: clientIds[0]
   }));
 }
-
-/* harmony default export */ var reusable_blocks_menu_items = ((0,external_wp_data_namespaceObject.withSelect)(select => {
-  const {
-    getSelectedBlockClientIds
-  } = select(external_wp_blockEditor_namespaceObject.store);
-  return {
-    clientIds: getSelectedBlockClientIds()
-  };
-})(ReusableBlocksMenuItems));
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/reusable-blocks/build-module/components/index.js
 

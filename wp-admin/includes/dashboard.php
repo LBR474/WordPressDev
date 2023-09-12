@@ -58,6 +58,7 @@ function wp_dashboard_setup() {
 	if ( current_user_can( 'view_site_health_checks' ) && ! is_network_admin() ) {
 		if ( ! class_exists( 'WP_Site_Health' ) ) {
 			require_once ABSPATH . 'wp-admin/includes/class-wp-site-health.php';
+			
 		}
 
 		WP_Site_Health::get_instance();
@@ -70,7 +71,10 @@ function wp_dashboard_setup() {
 
 	// Right Now.
 	if ( is_blog_admin() && current_user_can( 'edit_posts' ) ) {
-		wp_add_dashboard_widget( 'dashboard_right_now', __( 'At a Glance' ), 'wp_dashboard_right_now' );
+		
+
+		wp_add_dashboard_widget( 'dashboard_right_now', __( 'At a glance' ), 'wp_dashboard_right_now' );
+		
 	}
 
 	if ( is_network_admin() ) {
@@ -2098,6 +2102,7 @@ function wp_welcome_panel() {
 			<?php if ( $is_block_theme ) : ?>
 				<h3><?php _e( 'Switch up your site&#8217;s look & feel with Styles' ); ?></h3>
 				<p><?php _e( 'Tweak your site, or give it a whole new look! Get creative &#8212; how about a new color palette or font?' ); ?></p>
+				<a href="<?php echo esc_url( admin_url( '/site-editor.php?path=%2Fwp_global_styles' ) ); ?>"><?php _e( 'Edit styles' ); ?></a>
 			<?php else : ?>
 				<h3><?php _e( 'Discover a new way to build your site.' ); ?></h3>
 				<p><?php _e( 'There is a new kind of WordPress theme, called a block theme, that lets you build the site you&#8217;ve always wanted &#8212; with blocks and styles.' ); ?></p>

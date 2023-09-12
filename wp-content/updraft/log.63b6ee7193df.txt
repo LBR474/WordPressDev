@@ -1,0 +1,28 @@
+0000.002 () Opened log file at time: Mon, 21 Aug 2023 21:51:14 +0000 on http://localhost:8888/WordPressDev
+0000.002 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.23.9 WP: 6.3 PHP: 7.4.33 (apache2handler, Darwin Fakes-iMac.local 22.5.0 Darwin Kernel Version 22.5.0: Thu Jun  8 22:22:19 PDT 2023; root:xnu-8796.121.3~7/RELEASE_ARM64_T8103 arm64) MySQL: 5.7.39 (max packet size=4194304) WPLANG: en_AU Server: Apache/2.4.54 (Unix) OpenSSL/1.0.2u PHP/7.4.33 mod_wsgi/3.5 Python/2.7.18 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.11 Perl/v5.30.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 11.9M | 6M) multisite: N openssl: OpenSSL 1.0.2u  20 Dec 2019 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.002 () Free space on disk containing Updraft's temporary directory: 142982.2 MB
+0000.041 () Restore setup, now closing connection and starting restore over AJAX.
+0000.001 () Opened log file at time: Mon, 21 Aug 2023 21:51:14 +0000 on http://localhost:8888/WordPressDev
+0000.001 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.23.9 WP: 6.3 PHP: 7.4.33 (apache2handler, Darwin Fakes-iMac.local 22.5.0 Darwin Kernel Version 22.5.0: Thu Jun  8 22:22:19 PDT 2023; root:xnu-8796.121.3~7/RELEASE_ARM64_T8103 arm64) MySQL: 5.7.39 (max packet size=4194304) WPLANG: en_AU Server: Apache/2.4.54 (Unix) OpenSSL/1.0.2u PHP/7.4.33 mod_wsgi/3.5 Python/2.7.18 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.11 Perl/v5.30.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 10.8M | 8M) multisite: N openssl: OpenSSL 1.0.2u  20 Dec 2019 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.001 () Free space on disk containing Updraft's temporary directory: 142982.3 MB
+0000.001 () Ensuring WP_Filesystem is setup for a restore
+0000.001 () WP_Filesystem is setup and ready for a restore
+0000.002 () Restore job started. Entities to restore: plugins. Restore options: {"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.003 () Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.004 () Entity: plugins
+0000.004 () restore_backup(backup_file=backup_2023-08-21-2150_Elementor_1_0b1767e3b7df-plugins.zip, type=plugins, info=a:3:{s:4:"path";s:57:"/Applications/MAMP/htdocs/WordPressDev/wp-content/plugins";s:11:"description";s:7:"Plugins";s:20:"singular_description";s:6:"Plugin";}, last_one=1)
+0000.004 () Unpacking backup... (backup_2023-08-21-2150_Elementor_1_0b1767e3b7df-plugins.zip, 17 MB)
+0000.004 () Unzipping backup_2023-08-21-2150_Elementor_1_0b1767e3b7df-plugins.zip to /Applications/MAMP/htdocs/WordPressDev/wp-content/upgrade/49ad72c5/ using UpdraftPlus_ZipArchive, starting index 0
+0000.615 () Unzip progress: 1002 out of 2863 files (23 MB, plugins/elementor/includes/widgets/image-box.php)
+0000.840 () Unzip progress: 2003 out of 2863 files (43.9 MB, plugins/updraftplus/includes/Google/IO/Abstract.php)
+0001.039 () Unzip progress: 2863 out of 2863 files (62.4 MB, plugins/updraftplus/vendor/components/jquery/bower.json)
+0001.041 () Moving old data: filesystem method / updraft_dir is potentially possible
+0001.041 () Moving old data: can potentially use wp_filesystem method / -old
+0001.041 () Moving old data out of the way...
+0001.385 () Top-level entities being moved: index.php, elementor, updraftplus, megamenu
+0001.386 () Moving unpacked backup into place...
+0001.717 () Top-level entities being moved: index.php, elementor, updraftplus, megamenu
+0001.718 () Cleaning up rubbish...
+0001.724 () Elementor's clear cache method exists and will be executed
+0001.730 () Restore successful!
+0001.730 () Restore successful

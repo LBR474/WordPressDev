@@ -23713,12 +23713,116 @@ const image_deprecated_v5 = {
 };
 /**
  * Deprecation for adding width and height as style rules on the inner img.
- * It also updates the widht and height attributes to be strings instead of numbers.
  *
  * @see https://github.com/WordPress/gutenberg/pull/31366
  */
 
 const image_deprecated_v6 = {
+  attributes: {
+    align: {
+      type: 'string'
+    },
+    url: {
+      type: 'string',
+      source: 'attribute',
+      selector: 'img',
+      attribute: 'src',
+      __experimentalRole: 'content'
+    },
+    alt: {
+      type: 'string',
+      source: 'attribute',
+      selector: 'img',
+      attribute: 'alt',
+      default: '',
+      __experimentalRole: 'content'
+    },
+    caption: {
+      type: 'string',
+      source: 'html',
+      selector: 'figcaption',
+      __experimentalRole: 'content'
+    },
+    title: {
+      type: 'string',
+      source: 'attribute',
+      selector: 'img',
+      attribute: 'title',
+      __experimentalRole: 'content'
+    },
+    href: {
+      type: 'string',
+      source: 'attribute',
+      selector: 'figure > a',
+      attribute: 'href',
+      __experimentalRole: 'content'
+    },
+    rel: {
+      type: 'string',
+      source: 'attribute',
+      selector: 'figure > a',
+      attribute: 'rel'
+    },
+    linkClass: {
+      type: 'string',
+      source: 'attribute',
+      selector: 'figure > a',
+      attribute: 'class'
+    },
+    id: {
+      type: 'number',
+      __experimentalRole: 'content'
+    },
+    width: {
+      type: 'number'
+    },
+    height: {
+      type: 'number'
+    },
+    aspectRatio: {
+      type: 'string'
+    },
+    scale: {
+      type: 'string'
+    },
+    sizeSlug: {
+      type: 'string'
+    },
+    linkDestination: {
+      type: 'string'
+    },
+    linkTarget: {
+      type: 'string',
+      source: 'attribute',
+      selector: 'figure > a',
+      attribute: 'target'
+    }
+  },
+  supports: {
+    anchor: true,
+    behaviors: {
+      lightbox: true
+    },
+    color: {
+      text: false,
+      background: false
+    },
+    filter: {
+      duotone: true
+    },
+    __experimentalBorder: {
+      color: true,
+      radius: true,
+      width: true,
+      __experimentalSkipSerialization: true,
+      __experimentalDefaultControls: {
+        color: true,
+        radius: true,
+        width: true
+      }
+    }
+  },
+
   save({
     attributes
   }) {
@@ -23740,7 +23844,7 @@ const image_deprecated_v6 = {
       title
     } = attributes;
     const newRel = !rel ? undefined : rel;
-    const borderProps = (0,external_wp_blockEditor_namespaceObject.__experimentalGetElementClassName)(attributes);
+    const borderProps = (0,external_wp_blockEditor_namespaceObject.__experimentalGetBorderClassesAndStyles)(attributes);
     const classes = classnames_default()({
       [`align${align}`]: align,
       [`size-${sizeSlug}`]: sizeSlug,
@@ -24303,8 +24407,8 @@ function image_Image({
     ref: imageRef,
     className: borderProps.className,
     style: {
-      width: width && height || aspectRatio ? '100%' : 'inherit',
-      height: width && height || aspectRatio ? '100%' : 'inherit',
+      width: width && height || aspectRatio ? '100%' : undefined,
+      height: width && height || aspectRatio ? '100%' : undefined,
       objectFit: scale,
       ...borderProps.style
     }
@@ -35884,6 +35988,11 @@ const nextpage_init = () => initBlock({
 
 
 
+/**
+ * Internal dependencies
+ */
+
+
 
 const PatternEdit = ({
   attributes,
@@ -35893,7 +36002,14 @@ const PatternEdit = ({
   const {
     replaceBlocks,
     __unstableMarkNextChangeAsNotPersistent
-  } = (0,external_wp_data_namespaceObject.useDispatch)(external_wp_blockEditor_namespaceObject.store); // Run this effect when the component loads.
+  } = (0,external_wp_data_namespaceObject.useDispatch)(external_wp_blockEditor_namespaceObject.store);
+  const {
+    setBlockEditingMode
+  } = unlock((0,external_wp_data_namespaceObject.useDispatch)(external_wp_blockEditor_namespaceObject.store));
+  const {
+    getBlockRootClientId,
+    getBlockEditingMode
+  } = unlock((0,external_wp_data_namespaceObject.useSelect)(external_wp_blockEditor_namespaceObject.store)); // Run this effect when the component loads.
   // This adds the Pattern's contents to the post.
   // This change won't be saved.
   // It will continue to pull from the pattern file unless changes are made to its respective template part.
@@ -35906,16 +36022,27 @@ const PatternEdit = ({
       // because nested pattern blocks cannot be inserted if the parent block supports
       // inner blocks but doesn't have blockSettings in the state.
       window.queueMicrotask(() => {
-        // Clone blocks from the pattern before insertion to ensure they receive
+        const rootClientId = getBlockRootClientId(clientId); // Clone blocks from the pattern before insertion to ensure they receive
         // distinct client ids. See https://github.com/WordPress/gutenberg/issues/50628.
+
         const clonedBlocks = selectedPattern.blocks.map(block => (0,external_wp_blocks_namespaceObject.cloneBlock)(block));
+        const rootEditingMode = getBlockEditingMode(rootClientId); // Temporarily set the root block to default mode to allow replacing the pattern.
+        // This could happen when the page is disabling edits of non-content blocks.
 
         __unstableMarkNextChangeAsNotPersistent();
 
-        replaceBlocks(clientId, clonedBlocks);
+        setBlockEditingMode(rootClientId, 'default');
+
+        __unstableMarkNextChangeAsNotPersistent();
+
+        replaceBlocks(clientId, clonedBlocks); // Restore the root block's original mode.
+
+        __unstableMarkNextChangeAsNotPersistent();
+
+        setBlockEditingMode(rootClientId, rootEditingMode);
       });
     }
-  }, [clientId, selectedPattern?.blocks, __unstableMarkNextChangeAsNotPersistent, replaceBlocks]);
+  }, [clientId, selectedPattern?.blocks, __unstableMarkNextChangeAsNotPersistent, replaceBlocks, getBlockEditingMode, setBlockEditingMode, getBlockRootClientId]);
   const props = (0,external_wp_blockEditor_namespaceObject.useBlockProps)();
   return (0,external_wp_element_namespaceObject.createElement)("div", { ...props
   });
@@ -48052,6 +48179,7 @@ const search_metadata = {
     },
     html: false
   },
+  viewScript: "file:./view.min.js",
   editorStyle: "wp-block-search-editor",
   style: "wp-block-search"
 };
@@ -56067,7 +56195,7 @@ function TemplatePartImportControls({
     type: "submit",
     isBusy: isBusy,
     "aria-disabled": isBusy || !selectedSidebar
-  }, (0,external_wp_i18n_namespaceObject.__)('Import')))));
+  }, (0,external_wp_i18n_namespaceObject._x)('Import', 'button label')))));
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@wordpress/block-library/build-module/template-part/edit/advanced-controls.js
@@ -58359,6 +58487,17 @@ function FootnotesEdit({
   const footnotes = meta?.footnotes ? JSON.parse(meta.footnotes) : [];
   const blockProps = (0,external_wp_blockEditor_namespaceObject.useBlockProps)();
 
+  if (postType !== 'post' && postType !== 'page') {
+    return (0,external_wp_element_namespaceObject.createElement)("div", { ...blockProps
+    }, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Placeholder, {
+      icon: (0,external_wp_element_namespaceObject.createElement)(external_wp_blockEditor_namespaceObject.BlockIcon, {
+        icon: format_list_numbered
+      }),
+      label: (0,external_wp_i18n_namespaceObject.__)('Footnotes') // To do: add instructions. We can't add new string in RC.
+
+    }));
+  }
+
   if (!footnotes.length) {
     return (0,external_wp_element_namespaceObject.createElement)("div", { ...blockProps
     }, (0,external_wp_element_namespaceObject.createElement)(external_wp_components_namespaceObject.Placeholder, {
@@ -58403,7 +58542,7 @@ function FootnotesEdit({
   }, "\u21A9\uFE0E"))));
 }
 
-;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/rng.js
+;// CONCATENATED MODULE: ./node_modules/@wordpress/block-library/node_modules/uuid/dist/esm-browser/rng.js
 // Unique ID creation requires a high quality random # generator. In the browser we therefore
 // require the crypto API and do not support built-in fallback to lower quality random number
 // generators (like Math.random()).
@@ -58423,9 +58562,9 @@ function rng() {
 
   return getRandomValues(rnds8);
 }
-;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/regex.js
+;// CONCATENATED MODULE: ./node_modules/@wordpress/block-library/node_modules/uuid/dist/esm-browser/regex.js
 /* harmony default export */ var regex = (/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i);
-;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/validate.js
+;// CONCATENATED MODULE: ./node_modules/@wordpress/block-library/node_modules/uuid/dist/esm-browser/validate.js
 
 
 function validate(uuid) {
@@ -58433,7 +58572,7 @@ function validate(uuid) {
 }
 
 /* harmony default export */ var esm_browser_validate = (validate);
-;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/stringify.js
+;// CONCATENATED MODULE: ./node_modules/@wordpress/block-library/node_modules/uuid/dist/esm-browser/stringify.js
 
 /**
  * Convert array of 16 byte values to UUID string format of the form:
@@ -58464,7 +58603,7 @@ function stringify(arr) {
 }
 
 /* harmony default export */ var esm_browser_stringify = (stringify);
-;// CONCATENATED MODULE: ./node_modules/uuid/dist/esm-browser/v4.js
+;// CONCATENATED MODULE: ./node_modules/@wordpress/block-library/node_modules/uuid/dist/esm-browser/v4.js
 
 
 
@@ -58529,7 +58668,13 @@ const {
   },
   style: "wp-block-footnotes"
 };
+
+const {
+  usesContextKey
+} = unlock(external_wp_blockEditor_namespaceObject.privateApis);
 const formatName = 'core/footnote';
+const POST_CONTENT_BLOCK_NAME = 'core/post-content';
+const SYNCED_PATTERN_BLOCK_NAME = 'core/block';
 const format = {
   title: (0,external_wp_i18n_namespaceObject.__)('Footnote'),
   tagName: 'sup',
@@ -58538,22 +58683,56 @@ const format = {
     'data-fn': 'data-fn'
   },
   contentEditable: false,
+  [usesContextKey]: ['postType'],
   edit: function Edit({
     value,
     onChange,
-    isObjectActive
+    isObjectActive,
+    context: {
+      postType
+    }
   }) {
     const registry = (0,external_wp_data_namespaceObject.useRegistry)();
     const {
       getSelectedBlockClientId,
+      getBlocks,
       getBlockRootClientId,
       getBlockName,
-      getBlocks
+      getBlockParentsByBlockName
     } = (0,external_wp_data_namespaceObject.useSelect)(external_wp_blockEditor_namespaceObject.store);
+    const footnotesBlockType = (0,external_wp_data_namespaceObject.useSelect)(select => select(external_wp_blocks_namespaceObject.store).getBlockType(format_name));
+    /*
+     * This useSelect exists because we need to use its return value
+     * outside the event callback.
+     */
+
+    const isBlockWithinPattern = (0,external_wp_data_namespaceObject.useSelect)(select => {
+      const {
+        getBlockParentsByBlockName: _getBlockParentsByBlockName,
+        getSelectedBlockClientId: _getSelectedBlockClientId
+      } = select(external_wp_blockEditor_namespaceObject.store);
+
+      const parentCoreBlocks = _getBlockParentsByBlockName(_getSelectedBlockClientId(), SYNCED_PATTERN_BLOCK_NAME);
+
+      return parentCoreBlocks && parentCoreBlocks.length > 0;
+    }, []);
     const {
       selectionChange,
       insertBlock
     } = (0,external_wp_data_namespaceObject.useDispatch)(external_wp_blockEditor_namespaceObject.store);
+
+    if (!footnotesBlockType) {
+      return null;
+    }
+
+    if (postType !== 'post' && postType !== 'page') {
+      return null;
+    } // Checks if the selected block lives within a pattern.
+
+
+    if (isBlockWithinPattern) {
+      return null;
+    }
 
     function onClick() {
       registry.batch(() => {
@@ -58573,12 +58752,22 @@ const format = {
           }, value.end, value.end);
           newValue.start = newValue.end - 1;
           onChange(newValue);
-        } // BFS search to find the first footnote block.
+        }
 
+        const selectedClientId = getSelectedBlockClientId();
+        /*
+         * Attempts to find a common parent post content block.
+         * This allows for locating blocks within a page edited in the site editor.
+         */
+
+        const parentPostContent = getBlockParentsByBlockName(selectedClientId, POST_CONTENT_BLOCK_NAME); // When called with a post content block, getBlocks will return
+        // the block with controlled inner blocks included.
+
+        const blocks = parentPostContent.length ? getBlocks(parentPostContent[0]) : getBlocks(); // BFS search to find the first footnote block.
 
         let fnBlock = null;
         {
-          const queue = [...getBlocks()];
+          const queue = [...blocks];
 
           while (queue.length) {
             const block = queue.shift();
@@ -58595,10 +58784,9 @@ const format = {
         // insert it at the bottom.
 
         if (!fnBlock) {
-          const clientId = getSelectedBlockClientId();
-          let rootClientId = getBlockRootClientId(clientId);
+          let rootClientId = getBlockRootClientId(selectedClientId);
 
-          while (rootClientId && getBlockName(rootClientId) !== 'core/post-content') {
+          while (rootClientId && getBlockName(rootClientId) !== POST_CONTENT_BLOCK_NAME) {
             rootClientId = getBlockRootClientId(rootClientId);
           }
 
@@ -58656,8 +58844,7 @@ const {
 const footnotes_settings = {
   icon: format_list_numbered,
   edit: FootnotesEdit
-}; // Would be good to remove the format and HoR if the block is unregistered.
-
+};
 (0,external_wp_richText_namespaceObject.registerFormatType)(formatName, format);
 const footnotes_init = () => {
   initBlock({

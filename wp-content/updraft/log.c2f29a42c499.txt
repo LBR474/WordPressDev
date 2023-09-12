@@ -1,0 +1,471 @@
+0000.000 (0) Opened log file at time: Mon, 11 Sep 2023 21:39:58 +0000 on http://localhost:8888/WordPressDev
+0000.001 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.23.10 WP: 6.3 PHP: 7.4.33 (apache2handler, Darwin Fakes-iMac.modem 22.6.0 Darwin Kernel Version 22.6.0: Wed Jul  5 22:22:52 PDT 2023; root:xnu-8796.141.3~6/RELEASE_ARM64_T8103 arm64) MySQL: 5.7.39 (max packet size=4194304) WPLANG: en_AU Server: Apache/2.4.54 (Unix) OpenSSL/1.0.2u PHP/7.4.33 mod_wsgi/3.5 Python/2.7.18 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.11 Perl/v5.30.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 7.9M | 2M) multisite: N openssl: OpenSSL 1.0.2u  20 Dec 2019 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.001 (0) Free space on disk containing Updraft's temporary directory: 140734.3 MB
+0000.002 (0) Tasks: Backup files: 1 (schedule: daily) Backup DB:  (schedule: daily)
+0000.002 (0) Processed schedules. Combining jobs from identical schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.004 (0) Requesting semaphore lock (fd) (apparently via scheduler: last_scheduled_action_called_at=1694382127, seconds_ago=86271)
+0000.005 (0) Set semaphore last lock (fd) time to 2023-09-11 21:39:58
+0000.005 (0) Semaphore lock (fd) complete
+0000.006 (0) Backup run: resumption=0, nonce=c2f29a42c499, file_nonce=c2f29a42c499 begun at=1694468398 (0s ago), job type=backup
+0000.006 (0) Scheduling a resumption (1) after 300 seconds (1694468698) in case this run gets aborted
+0000.025 (0) Checking if we have a zip executable available
+0000.026 (0) Testing: /usr/bin/zip
+0000.032 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.032 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.033 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.033 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0000.033 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0000.037 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0000.038 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0000.049 (0) Working binary zip found: /usr/bin/zip
+0000.049 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0000.049 (0) Creation of backups of directories: beginning
+0000.051 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0000.164 (0) Total entities for the zip file: 524 directories, 2615 files (0 skipped as non-modified), 67.6 MB
+0000.167 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0000.168 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0000.170 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0000.172 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0000.174 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0000.176 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 600 files added (on-disk size: 0 KB)
+0000.177 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 700 files added (on-disk size: 0 KB)
+0000.179 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 800 files added (on-disk size: 0 KB)
+0000.181 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 MB added on this batch (25.2 MB, 2615 files batched, 900 (900) added so far); re-opening (prior size: 0 KB)
+0000.682 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: size is now: 5.50 MB
+0000.683 (0) A useful amount of data was added after this amount of zip processing: 1.2 s (normalised: 1.2 s, rate: 21142.6 KB/s)
+0000.684 (0) Performance is good - will increase the amount of data we attempt to batch (time=1.2223401069641, normalised_time=1.2108262552348, max_time=0.68353414535522, data points known=1, old_max_bytes=26214400, new_max_bytes=129900057)
+0000.684 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 900 files added (on-disk size: 5632.2 KB)
+0000.686 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 1000 files added (on-disk size: 5632.2 KB)
+0000.688 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 1100 files added (on-disk size: 5632.2 KB)
+0000.690 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 1200 files added (on-disk size: 5632.2 KB)
+0000.692 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 1300 files added (on-disk size: 5632.2 KB)
+0000.693 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 1400 files added (on-disk size: 5632.2 KB)
+0000.695 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 1500 files added (on-disk size: 5632.2 KB)
+0000.697 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 1600 files added (on-disk size: 5632.2 KB)
+0000.699 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 1700 files added (on-disk size: 5632.2 KB)
+0000.701 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 1800 files added (on-disk size: 5632.2 KB)
+0000.703 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 1900 files added (on-disk size: 5632.2 KB)
+0000.703 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (32.6 MB, 2615 files batched, 1001 (1901) added so far); re-opening (prior size: 5632.2 KB)
+0001.651 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: size is now: 15.60 MB
+0001.655 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 2000 files added (on-disk size: 15980.9 KB)
+0001.657 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 2100 files added (on-disk size: 15980.9 KB)
+0001.658 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 2200 files added (on-disk size: 15980.9 KB)
+0001.660 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 2300 files added (on-disk size: 15980.9 KB)
+0001.662 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 2400 files added (on-disk size: 15980.9 KB)
+0001.664 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 2500 files added (on-disk size: 15980.9 KB)
+0001.666 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: 2600 files added (on-disk size: 15980.9 KB)
+0001.943 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.tmp: size is now: 19.00 MB
+0001.981 (0) Creating zip file manifest (backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.list-temp.tmp)
+0001.987 (0) Successfully created zip file manifest (size: 209166)
+0002.247 (0) Created plugins zip (0) - 19504.5 KB in 2.2 s (8892.8 KB/s) (sha1: 8ef6a8bed0f406db721649f9f33884797d331396, sha256: 3ef7b470e257ab0bce3b84e22259d4a0cee44b8be85840b5fe90e7af4a80584b)
+0002.250 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0002.251 (0) No remote despatch: user chose no remote backup service
+0002.251 (0) Recording as successfully uploaded: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip
+0002.251 (0) Deleting zip manifest (backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip.list.tmp)
+0002.252 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=7, retain_db=7
+0002.253 (0) Number of backup sets in history: 8; groups (db): 1
+0002.253 (0) Examining (for databases) backup set with group_id=0, nonce=0628ba4ced0b, datestamp=1694382127 (Sep 10 2023 21:42:07)
+0002.253 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0002.253 (0) Examining (for databases) backup set with group_id=0, nonce=a9789616f19a, datestamp=1694295898 (Sep 09 2023 21:44:58)
+0002.253 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0002.253 (0) Examining (for databases) backup set with group_id=0, nonce=c321134a0c1f, datestamp=1694209195 (Sep 08 2023 21:39:55)
+0002.253 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0002.253 (0) Examining (for databases) backup set with group_id=0, nonce=f9c75852915a, datestamp=1694208720 (Sep 08 2023 21:32:00)
+0002.253 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0002.254 (0) Examining (for databases) backup set with group_id=0, nonce=ff5fc0f5e692, datestamp=1694122049 (Sep 07 2023 21:27:29)
+0002.254 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0002.254 (0) Examining (for databases) backup set with group_id=0, nonce=ff2a0f99363d, datestamp=1694035647 (Sep 06 2023 21:27:27)
+0002.254 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0002.254 (0) Examining (for databases) backup set with group_id=0, nonce=bc711420d4a2, datestamp=1694035199 (Sep 06 2023 21:19:59)
+0002.254 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0002.254 (0) Examining (for databases) backup set with group_id=0, nonce=8e297c963db5, datestamp=1694035053 (Sep 06 2023 21:17:33)
+0002.254 (0) Number of backup sets in history: 8; groups (files): 1
+0002.254 (0) Examining (for files) backup set with nonce=0628ba4ced0b, datestamp=1694382127 (Sep 10 2023 21:42:07)
+0002.254 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0002.254 (0) Examining (for files) backup set with nonce=a9789616f19a, datestamp=1694295898 (Sep 09 2023 21:44:58)
+0002.255 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0002.255 (0) Examining (for files) backup set with nonce=c321134a0c1f, datestamp=1694209195 (Sep 08 2023 21:39:55)
+0002.255 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0002.255 (0) Examining (for files) backup set with nonce=f9c75852915a, datestamp=1694208720 (Sep 08 2023 21:32:00)
+0002.255 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0002.255 (0) Examining (for files) backup set with nonce=ff5fc0f5e692, datestamp=1694122049 (Sep 07 2023 21:27:29)
+0002.255 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0002.255 (0) Examining (for files) backup set with nonce=ff2a0f99363d, datestamp=1694035647 (Sep 06 2023 21:27:27)
+0002.255 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0002.255 (0) Examining (for files) backup set with nonce=bc711420d4a2, datestamp=1694035199 (Sep 06 2023 21:19:59)
+0002.255 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0002.255 (0) Examining (for files) backup set with nonce=8e297c963db5, datestamp=1694035053 (Sep 06 2023 21:17:33)
+0002.255 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0002.255 (0) Retain: saving new backup history (sets now: 8) and finishing retain operation
+0002.257 (0) Beginning creation of dump of themes (split every: 400 MB)
+0002.317 (0) Total entities for the zip file: 202 directories, 1359 files (0 skipped as non-modified), 32.8 MB
+0002.319 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0002.321 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0002.323 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: 300 files added (on-disk size: 0 KB)
+0002.324 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: 400 files added (on-disk size: 0 KB)
+0002.326 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: 500 files added (on-disk size: 0 KB)
+0002.328 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: 600 files added (on-disk size: 0 KB)
+0002.330 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: 700 files added (on-disk size: 0 KB)
+0002.331 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: 800 files added (on-disk size: 0 KB)
+0002.333 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: 900 files added (on-disk size: 0 KB)
+0002.335 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: 1000 files added (on-disk size: 0 KB)
+0002.335 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (20.2 MB, 1359 files batched, 1001 (1001) added so far); re-opening (prior size: 0 KB)
+0002.644 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: size is now: 16.90 MB
+0002.648 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: 1100 files added (on-disk size: 17311.9 KB)
+0002.650 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: 1200 files added (on-disk size: 17311.9 KB)
+0002.651 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: 1300 files added (on-disk size: 17311.9 KB)
+0002.927 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.tmp: size is now: 27.40 MB
+0002.945 (0) Creating zip file manifest (backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.list-temp.tmp)
+0002.948 (0) Successfully created zip file manifest (size: 92318)
+0003.319 (0) Created themes zip (0) - 28046.1 KB in 1.1 s (26442.3 KB/s) (sha1: a8200a61156167d88560a68ee2d6316fd8fa76a0, sha256: 80a5bd6e4ad79c3023d9c0a4be24d5c84852edc05b07ca498031ac3b544fec1e)
+0003.321 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0003.321 (0) No remote despatch: user chose no remote backup service
+0003.322 (0) Recording as successfully uploaded: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip
+0003.322 (0) Deleting zip manifest (backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip.list.tmp)
+0003.323 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=7, retain_db=7
+0003.324 (0) Number of backup sets in history: 8; groups (db): 1
+0003.324 (0) Examining (for databases) backup set with group_id=0, nonce=0628ba4ced0b, datestamp=1694382127 (Sep 10 2023 21:42:07)
+0003.324 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0003.324 (0) Examining (for databases) backup set with group_id=0, nonce=a9789616f19a, datestamp=1694295898 (Sep 09 2023 21:44:58)
+0003.324 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0003.324 (0) Examining (for databases) backup set with group_id=0, nonce=c321134a0c1f, datestamp=1694209195 (Sep 08 2023 21:39:55)
+0003.324 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0003.324 (0) Examining (for databases) backup set with group_id=0, nonce=f9c75852915a, datestamp=1694208720 (Sep 08 2023 21:32:00)
+0003.324 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0003.324 (0) Examining (for databases) backup set with group_id=0, nonce=ff5fc0f5e692, datestamp=1694122049 (Sep 07 2023 21:27:29)
+0003.324 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0003.325 (0) Examining (for databases) backup set with group_id=0, nonce=ff2a0f99363d, datestamp=1694035647 (Sep 06 2023 21:27:27)
+0003.325 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0003.325 (0) Examining (for databases) backup set with group_id=0, nonce=bc711420d4a2, datestamp=1694035199 (Sep 06 2023 21:19:59)
+0003.325 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0003.325 (0) Examining (for databases) backup set with group_id=0, nonce=8e297c963db5, datestamp=1694035053 (Sep 06 2023 21:17:33)
+0003.325 (0) Number of backup sets in history: 8; groups (files): 1
+0003.325 (0) Examining (for files) backup set with nonce=0628ba4ced0b, datestamp=1694382127 (Sep 10 2023 21:42:07)
+0003.325 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0003.325 (0) Examining (for files) backup set with nonce=a9789616f19a, datestamp=1694295898 (Sep 09 2023 21:44:58)
+0003.325 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0003.325 (0) Examining (for files) backup set with nonce=c321134a0c1f, datestamp=1694209195 (Sep 08 2023 21:39:55)
+0003.325 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0003.325 (0) Examining (for files) backup set with nonce=f9c75852915a, datestamp=1694208720 (Sep 08 2023 21:32:00)
+0003.325 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0003.326 (0) Examining (for files) backup set with nonce=ff5fc0f5e692, datestamp=1694122049 (Sep 07 2023 21:27:29)
+0003.326 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0003.326 (0) Examining (for files) backup set with nonce=ff2a0f99363d, datestamp=1694035647 (Sep 06 2023 21:27:27)
+0003.326 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0003.326 (0) Examining (for files) backup set with nonce=bc711420d4a2, datestamp=1694035199 (Sep 06 2023 21:19:59)
+0003.326 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0003.326 (0) Examining (for files) backup set with nonce=8e297c963db5, datestamp=1694035053 (Sep 06 2023 21:17:33)
+0003.326 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0003.326 (0) Retain: saving new backup history (sets now: 8) and finishing retain operation
+0003.328 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0003.328 (0) Looking for candidates to backup in: /Applications/MAMP/htdocs/WordPressDev/wp-content/uploads
+0003.328 (0) finding files: 2023: adding to list (1)
+0003.329 (0) finding files: elementor: adding to list (2)
+0003.329 (0) finding files: redux: adding to list (3)
+0003.329 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0003.337 (0) Total entities for the zip file: 7 directories, 120 files (0 skipped as non-modified), 57.1 MB
+0003.339 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0003.578 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-uploads.zip.tmp: size is now: 57.10 MB
+0003.581 (0) Creating zip file manifest (backup_2023-09-11-2139_Elementor_1_c2f29a42c499-uploads.zip.list-temp.tmp)
+0003.582 (0) Successfully created zip file manifest (size: 8609)
+0004.353 (0) Created uploads zip (0) - 58422.9 KB in 1 s (57145.7 KB/s) (sha1: e89809047d788987839c18714bce2ce5b30cd733, sha256: 8c8542a1137ed48070520276798608954a8c0a22e228d7f128a000f1a91c8ef1)
+0004.354 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0004.354 (0) No remote despatch: user chose no remote backup service
+0004.355 (0) Recording as successfully uploaded: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-uploads.zip
+0004.355 (0) Deleting zip manifest (backup_2023-09-11-2139_Elementor_1_c2f29a42c499-uploads.zip.list.tmp)
+0004.356 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=7, retain_db=7
+0004.357 (0) Number of backup sets in history: 8; groups (db): 1
+0004.357 (0) Examining (for databases) backup set with group_id=0, nonce=0628ba4ced0b, datestamp=1694382127 (Sep 10 2023 21:42:07)
+0004.357 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.358 (0) Examining (for databases) backup set with group_id=0, nonce=a9789616f19a, datestamp=1694295898 (Sep 09 2023 21:44:58)
+0004.358 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.358 (0) Examining (for databases) backup set with group_id=0, nonce=c321134a0c1f, datestamp=1694209195 (Sep 08 2023 21:39:55)
+0004.358 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.358 (0) Examining (for databases) backup set with group_id=0, nonce=f9c75852915a, datestamp=1694208720 (Sep 08 2023 21:32:00)
+0004.358 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0004.358 (0) Examining (for databases) backup set with group_id=0, nonce=ff5fc0f5e692, datestamp=1694122049 (Sep 07 2023 21:27:29)
+0004.358 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0004.358 (0) Examining (for databases) backup set with group_id=0, nonce=ff2a0f99363d, datestamp=1694035647 (Sep 06 2023 21:27:27)
+0004.358 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0004.358 (0) Examining (for databases) backup set with group_id=0, nonce=bc711420d4a2, datestamp=1694035199 (Sep 06 2023 21:19:59)
+0004.358 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.358 (0) Examining (for databases) backup set with group_id=0, nonce=8e297c963db5, datestamp=1694035053 (Sep 06 2023 21:17:33)
+0004.358 (0) Number of backup sets in history: 8; groups (files): 1
+0004.358 (0) Examining (for files) backup set with nonce=0628ba4ced0b, datestamp=1694382127 (Sep 10 2023 21:42:07)
+0004.358 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.359 (0) Examining (for files) backup set with nonce=a9789616f19a, datestamp=1694295898 (Sep 09 2023 21:44:58)
+0004.359 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.359 (0) Examining (for files) backup set with nonce=c321134a0c1f, datestamp=1694209195 (Sep 08 2023 21:39:55)
+0004.359 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.359 (0) Examining (for files) backup set with nonce=f9c75852915a, datestamp=1694208720 (Sep 08 2023 21:32:00)
+0004.359 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0004.359 (0) Examining (for files) backup set with nonce=ff5fc0f5e692, datestamp=1694122049 (Sep 07 2023 21:27:29)
+0004.359 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0004.359 (0) Examining (for files) backup set with nonce=ff2a0f99363d, datestamp=1694035647 (Sep 06 2023 21:27:27)
+0004.359 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0004.359 (0) Examining (for files) backup set with nonce=bc711420d4a2, datestamp=1694035199 (Sep 06 2023 21:19:59)
+0004.359 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.359 (0) Examining (for files) backup set with nonce=8e297c963db5, datestamp=1694035053 (Sep 06 2023 21:17:33)
+0004.359 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0004.360 (0) Retain: saving new backup history (sets now: 8) and finishing retain operation
+0004.361 (0) Beginning backup of other directories found in the content directory (index: 0)
+0004.362 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0004.362 (0) Looking for candidates to backup in: /Applications/MAMP/htdocs/WordPressDev/wp-content
+0004.362 (0) finding files: upgrade-temp-backup-old: adding to list (1)
+0004.362 (0) finding files: upgrade: skipping: excluded by options
+0004.362 (0) finding files: index.php: adding to list (2)
+0004.363 (0) finding files: upgrade-temp-backup: adding to list (3)
+0004.363 (0) finding files: plugins: skipping: this is the plugins directory
+0004.363 (0) finding files: uploads: skipping: this is the uploads directory
+0004.363 (0) finding files: updraft: skipping: this is the updraft directory
+0004.363 (0) finding files: languages: adding to list (4)
+0004.364 (0) finding files: index.php-old: adding to list (5)
+0004.364 (0) finding files: plugins-old: adding to list (6)
+0004.364 (0) finding files: themes-old: adding to list (7)
+0004.364 (0) finding files: languages-old: adding to list (8)
+0004.364 (0) finding files: themes: skipping: this is the themes directory
+0004.365 (0) finding files: uploads-old: adding to list (9)
+0004.372 (0) Total entities for the zip file: 12 directories, 142 files (0 skipped as non-modified), 5.2 MB
+0004.374 (0) Zip: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-others.zip.tmp: 100 files added (on-disk size: 0 KB)
+0004.519 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-others.zip.tmp: size is now: 1.30 MB
+0004.521 (0) Creating zip file manifest (backup_2023-09-11-2139_Elementor_1_c2f29a42c499-others.zip.list-temp.tmp)
+0004.522 (0) Successfully created zip file manifest (size: 8786)
+0004.540 (0) Created others zip (0) - 1280.4 KB in 0.2 s (7346.7 KB/s) (sha1: 878daba6dffcbd752bc96775e06ffb8f9fbfc8a1, sha256: cfe693a4835ac2caca60371c5c3e4b73862828bd72e576deee2e54724726854f)
+0004.542 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0004.542 (0) No remote despatch: user chose no remote backup service
+0004.542 (0) Recording as successfully uploaded: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-others.zip
+0004.543 (0) Deleting zip manifest (backup_2023-09-11-2139_Elementor_1_c2f29a42c499-others.zip.list.tmp)
+0004.543 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=7, retain_db=7
+0004.544 (0) Number of backup sets in history: 8; groups (db): 1
+0004.544 (0) Examining (for databases) backup set with group_id=0, nonce=0628ba4ced0b, datestamp=1694382127 (Sep 10 2023 21:42:07)
+0004.544 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.544 (0) Examining (for databases) backup set with group_id=0, nonce=a9789616f19a, datestamp=1694295898 (Sep 09 2023 21:44:58)
+0004.544 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.544 (0) Examining (for databases) backup set with group_id=0, nonce=c321134a0c1f, datestamp=1694209195 (Sep 08 2023 21:39:55)
+0004.544 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.545 (0) Examining (for databases) backup set with group_id=0, nonce=f9c75852915a, datestamp=1694208720 (Sep 08 2023 21:32:00)
+0004.545 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0004.545 (0) Examining (for databases) backup set with group_id=0, nonce=ff5fc0f5e692, datestamp=1694122049 (Sep 07 2023 21:27:29)
+0004.545 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0004.545 (0) Examining (for databases) backup set with group_id=0, nonce=ff2a0f99363d, datestamp=1694035647 (Sep 06 2023 21:27:27)
+0004.545 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0004.545 (0) Examining (for databases) backup set with group_id=0, nonce=bc711420d4a2, datestamp=1694035199 (Sep 06 2023 21:19:59)
+0004.545 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.545 (0) Examining (for databases) backup set with group_id=0, nonce=8e297c963db5, datestamp=1694035053 (Sep 06 2023 21:17:33)
+0004.545 (0) Number of backup sets in history: 8; groups (files): 1
+0004.545 (0) Examining (for files) backup set with nonce=0628ba4ced0b, datestamp=1694382127 (Sep 10 2023 21:42:07)
+0004.545 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.546 (0) Examining (for files) backup set with nonce=a9789616f19a, datestamp=1694295898 (Sep 09 2023 21:44:58)
+0004.546 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.546 (0) Examining (for files) backup set with nonce=c321134a0c1f, datestamp=1694209195 (Sep 08 2023 21:39:55)
+0004.546 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.546 (0) Examining (for files) backup set with nonce=f9c75852915a, datestamp=1694208720 (Sep 08 2023 21:32:00)
+0004.546 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0004.546 (0) Examining (for files) backup set with nonce=ff5fc0f5e692, datestamp=1694122049 (Sep 07 2023 21:27:29)
+0004.546 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0004.546 (0) Examining (for files) backup set with nonce=ff2a0f99363d, datestamp=1694035647 (Sep 06 2023 21:27:27)
+0004.546 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0004.546 (0) Examining (for files) backup set with nonce=bc711420d4a2, datestamp=1694035199 (Sep 06 2023 21:19:59)
+0004.546 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0004.546 (0) Examining (for files) backup set with nonce=8e297c963db5, datestamp=1694035053 (Sep 06 2023 21:17:33)
+0004.546 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0004.546 (0) Retain: saving new backup history (sets now: 8) and finishing retain operation
+0004.549 (0) Saving backup status to database (elements: 8)
+0004.551 (0) Beginning creation of database dump (WordPress DB)
+0004.551 (0) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+0004.562 (0) Table wp_options: Total expected rows (via COUNT): 400
+0004.562 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.578 (0) Table wp_options: Rows added in this batch (next record: 1646): 396 (uncompressed bytes in this segment=759154) in 0.02 seconds
+0004.581 (0) Table wp_options: finishing file(s) (2, 78.4 KB)
+0004.582 (0) Table wp_users: Total expected rows (via COUNT): 1
+0004.582 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.583 (0) Table wp_users: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1394) in 0.00 seconds
+0004.584 (0) Table wp_users: finishing file(s) (2, 0.6 KB)
+0004.585 (0) Table wp_usermeta: Total expected rows (via COUNT): 32
+0004.586 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.586 (0) Table wp_usermeta: Rows added in this batch (next record: 32): 32 (uncompressed bytes in this segment=5864) in 0.00 seconds
+0004.588 (0) Table wp_usermeta: finishing file(s) (2, 2.6 KB)
+0004.590 (0) Table wp_commentmeta: Total expected rows (via COUNT): 0
+0004.591 (0) Table wp_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=685) in 0.00 seconds
+0004.592 (0) Table wp_commentmeta: finishing file(s) (2, 0.4 KB)
+0004.593 (0) Table wp_comments: Total expected rows (via COUNT): 1
+0004.594 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0004.594 (0) Table wp_comments: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=2141) in 0.00 seconds
+0004.596 (0) Table wp_comments: finishing file(s) (2, 0.8 KB)
+0004.597 (0) Table wp_links: Total expected rows (via COUNT): 0
+0004.597 (0) Table wp_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1310) in 0.00 seconds
+0004.599 (0) Table wp_links: finishing file(s) (2, 0.5 KB)
+0004.605 (0) Table wp_postmeta: Total expected rows (approximate): 7823
+0004.998 (0) Table wp_postmeta: Rows added in this batch (next record: 10078): 7322 (uncompressed bytes in this segment=20470148) in 0.40 seconds
+0005.001 (0) Table wp_postmeta: finishing file(s) (2, 1744 KB)
+0005.013 (0) Table wp_posts: Total expected rows (via COUNT): 1415
+0007.559 (0) Table wp_posts: Rows added in this batch (next record: 1645): 1415 (uncompressed bytes in this segment=38247036) in 2.56 seconds
+0007.564 (0) Table wp_posts: finishing file(s) (2, 11981.5 KB)
+0007.565 (0) Table wp_term_relationships: Total expected rows (approximate): 22
+0007.566 (0) Table wp_term_relationships: Rows added in this batch (next record: 100000): 22 (uncompressed bytes in this segment=988) in 0.00 seconds
+0007.567 (0) Table wp_term_relationships: finishing file(s) (2, 0.5 KB)
+0007.569 (0) Table wp_term_taxonomy: Total expected rows (via COUNT): 8
+0007.569 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0007.570 (0) Table wp_term_taxonomy: Rows added in this batch (next record: 8): 8 (uncompressed bytes in this segment=1197) in 0.00 seconds
+0007.571 (0) Table wp_term_taxonomy: finishing file(s) (2, 0.5 KB)
+0007.573 (0) Table wp_termmeta: Total expected rows (via COUNT): 0
+0007.574 (0) Table wp_termmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=658) in 0.00 seconds
+0007.575 (0) Table wp_termmeta: finishing file(s) (2, 0.4 KB)
+0007.576 (0) Table wp_terms: Total expected rows (via COUNT): 8
+0007.576 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0007.577 (0) Table wp_terms: Rows added in this batch (next record: 8): 8 (uncompressed bytes in this segment=1007) in 0.00 seconds
+0007.578 (0) Table wp_terms: finishing file(s) (2, 0.5 KB)
+0007.579 (0) Skipping table (lacks our prefix (wp_)): columns_priv
+0007.579 (0) Skipping table (lacks our prefix (wp_)): db
+0007.579 (0) Skipping table (lacks our prefix (wp_)): engine_cost
+0007.579 (0) Skipping table (lacks our prefix (wp_)): event
+0007.579 (0) Skipping table (lacks our prefix (wp_)): func
+0007.580 (0) Skipping table (lacks our prefix (wp_)): general_log
+0007.580 (0) Skipping table (lacks our prefix (wp_)): gtid_executed
+0007.580 (0) Skipping table (lacks our prefix (wp_)): help_category
+0007.580 (0) Skipping table (lacks our prefix (wp_)): help_keyword
+0007.580 (0) Skipping table (lacks our prefix (wp_)): help_relation
+0007.581 (0) Skipping table (lacks our prefix (wp_)): help_topic
+0007.581 (0) Skipping table (lacks our prefix (wp_)): innodb_index_stats
+0007.581 (0) Skipping table (lacks our prefix (wp_)): innodb_table_stats
+0007.581 (0) Skipping table (lacks our prefix (wp_)): ndb_binlog_index
+0007.581 (0) Skipping table (lacks our prefix (wp_)): plugin
+0007.581 (0) Skipping table (lacks our prefix (wp_)): proc
+0007.582 (0) Skipping table (lacks our prefix (wp_)): procs_priv
+0007.582 (0) Skipping table (lacks our prefix (wp_)): proxies_priv
+0007.582 (0) Skipping table (lacks our prefix (wp_)): server_cost
+0007.582 (0) Skipping table (lacks our prefix (wp_)): servers
+0007.582 (0) Skipping table (lacks our prefix (wp_)): slave_master_info
+0007.583 (0) Skipping table (lacks our prefix (wp_)): slave_relay_log_info
+0007.583 (0) Skipping table (lacks our prefix (wp_)): slave_worker_info
+0007.583 (0) Skipping table (lacks our prefix (wp_)): slow_log
+0007.583 (0) Skipping table (lacks our prefix (wp_)): tables_priv
+0007.583 (0) Skipping table (lacks our prefix (wp_)): time_zone
+0007.583 (0) Skipping table (lacks our prefix (wp_)): time_zone_leap_second
+0007.584 (0) Skipping table (lacks our prefix (wp_)): time_zone_name
+0007.584 (0) Skipping table (lacks our prefix (wp_)): time_zone_transition
+0007.584 (0) Skipping table (lacks our prefix (wp_)): time_zone_transition_type
+0007.584 (0) Skipping table (lacks our prefix (wp_)): user
+0007.585 (0) Table wp_FinalTiles_gallery: Total expected rows (via COUNT): 1
+0007.586 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0007.586 (0) Table wp_FinalTiles_gallery: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=3022) in 0.00 seconds
+0007.587 (0) Table wp_FinalTiles_gallery: finishing file(s) (2, 1.3 KB)
+0007.589 (0) Table wp_FinalTiles_gallery_images: Total expected rows (via COUNT): 2
+0007.589 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0007.589 (0) Table wp_FinalTiles_gallery_images: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=1424) in 0.00 seconds
+0007.591 (0) Table wp_FinalTiles_gallery_images: finishing file(s) (2, 0.6 KB)
+0007.592 (0) Table wp_booking: Total expected rows (via COUNT): 1
+0007.592 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0007.593 (0) Table wp_booking: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1381) in 0.00 seconds
+0007.594 (0) Table wp_booking: finishing file(s) (2, 0.7 KB)
+0007.595 (0) Table wp_booking_dates_props: Total expected rows (via COUNT): 0
+0007.595 (0) Table wp_booking_dates_props: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=753) in 0.00 seconds
+0007.597 (0) Table wp_booking_dates_props: finishing file(s) (2, 0.4 KB)
+0007.598 (0) Table wp_bookingdates: Total expected rows (via COUNT): 3
+0007.598 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0007.599 (0) Table wp_bookingdates: Rows added in this batch (next record: 3): 3 (uncompressed bytes in this segment=842) in 0.00 seconds
+0007.600 (0) Table wp_bookingdates: finishing file(s) (2, 0.4 KB)
+0007.601 (0) Table wp_e_events: Total expected rows (via COUNT): 0
+0007.602 (0) Table wp_e_events: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=529) in 0.00 seconds
+0007.603 (0) Table wp_e_events: finishing file(s) (2, 0.4 KB)
+0007.603 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_options.table.tmpr1647.gz (1/49/fopen): adding to final database dump
+0007.604 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_options.table.gz (2/49/fopen): adding to final database dump
+0007.605 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_users.table.tmpr2.gz (3/49/fopen): adding to final database dump
+0007.605 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_users.table.gz (4/49/fopen): adding to final database dump
+0007.605 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_usermeta.table.tmpr33.gz (5/49/fopen): adding to final database dump
+0007.605 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_usermeta.table.gz (6/49/fopen): adding to final database dump
+0007.606 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_commentmeta.table.tmpr0.gz (7/49/fopen): adding to final database dump
+0007.606 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_commentmeta.table.gz (8/49/fopen): adding to final database dump
+0007.606 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_comments.table.tmpr2.gz (9/49/fopen): adding to final database dump
+0007.606 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_comments.table.gz (10/49/fopen): adding to final database dump
+0007.606 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_links.table.tmpr0.gz (11/49/fopen): adding to final database dump
+0007.607 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_links.table.gz (12/49/fopen): adding to final database dump
+0007.607 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_postmeta.table.tmpr10079.gz (13/49/fopen): adding to final database dump
+0007.622 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_postmeta.table.gz (14/49/fopen): adding to final database dump
+0007.623 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_posts.table.tmpr1646.gz (15/49/fopen): adding to final database dump
+0007.729 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_posts.table.gz (16/49/fopen): adding to final database dump
+0007.730 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_term_relationships.table.tmpr100001.gz (17/49/fopen): adding to final database dump
+0007.730 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_term_relationships.table.gz (18/49/fopen): adding to final database dump
+0007.730 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_term_taxonomy.table.tmpr9.gz (19/49/fopen): adding to final database dump
+0007.731 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_term_taxonomy.table.gz (20/49/fopen): adding to final database dump
+0007.731 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_termmeta.table.tmpr0.gz (21/49/fopen): adding to final database dump
+0007.731 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_termmeta.table.gz (22/49/fopen): adding to final database dump
+0007.732 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_terms.table.tmpr9.gz (23/49/fopen): adding to final database dump
+0007.732 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_terms.table.gz (24/49/fopen): adding to final database dump
+0007.732 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_FinalTiles_gallery.table.tmpr2.gz (25/49/fopen): adding to final database dump
+0007.732 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_FinalTiles_gallery.table.gz (26/49/fopen): adding to final database dump
+0007.733 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_FinalTiles_gallery_images.table.tmpr3.gz (27/49/fopen): adding to final database dump
+0007.733 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_FinalTiles_gallery_images.table.gz (28/49/fopen): adding to final database dump
+0007.733 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_booking.table.tmpr2.gz (29/49/fopen): adding to final database dump
+0007.733 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_booking.table.gz (30/49/fopen): adding to final database dump
+0007.734 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_booking_dates_props.table.tmpr0.gz (31/49/fopen): adding to final database dump
+0007.734 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_booking_dates_props.table.gz (32/49/fopen): adding to final database dump
+0007.734 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_bookingdates.table.tmpr4.gz (33/49/fopen): adding to final database dump
+0007.734 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_bookingdates.table.gz (34/49/fopen): adding to final database dump
+0007.734 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_e_events.table.tmpr0.gz (35/49/fopen): adding to final database dump
+0007.735 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db-table-wp_e_events.table.gz (36/49/fopen): adding to final database dump
+0007.741 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db.gz: finished writing out complete database file (13814.8 KB)
+0007.927 (0) Total database tables backed up: 18 (backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db.gz, size: 14146447, sha1: 25642345886ebe926bc861815258c910fbffbaf0, sha256: 12ac08eb13e78e0d8441429b8184b65d97ceeeae890212a2a49bb9ea98def0d7)
+0007.931 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-plugins.zip: plugins: This file has already been successfully uploaded
+0007.931 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-themes.zip: themes: This file has already been successfully uploaded
+0007.931 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-uploads.zip: uploads: This file has already been successfully uploaded
+0007.931 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-others.zip: others: This file has already been successfully uploaded
+0007.932 (0) backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db.gz: db: This file has not yet been successfully uploaded: will queue
+0007.932 (0) Saving backup history. Total backup size: 118.2 MB
+0007.933 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0007.934 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0007.935 (0) No remote despatch: user chose no remote backup service
+0007.935 (0) Recording as successfully uploaded: backup_2023-09-11-2139_Elementor_1_c2f29a42c499-db.gz
+0007.936 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=7, retain_db=7
+0007.937 (0) Number of backup sets in history: 9; groups (db): 1
+0007.937 (0) Examining (for databases) backup set with group_id=0, nonce=c2f29a42c499, datestamp=1694468398 (Sep 11 2023 21:39:58)
+0007.937 (0) This backup set is the backup set just made, so will not be deleted.
+0007.937 (0) Examining (for databases) backup set with group_id=0, nonce=0628ba4ced0b, datestamp=1694382127 (Sep 10 2023 21:42:07)
+0007.937 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0007.937 (0) Examining (for databases) backup set with group_id=0, nonce=a9789616f19a, datestamp=1694295898 (Sep 09 2023 21:44:58)
+0007.937 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0007.937 (0) Examining (for databases) backup set with group_id=0, nonce=c321134a0c1f, datestamp=1694209195 (Sep 08 2023 21:39:55)
+0007.937 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0007.937 (0) Examining (for databases) backup set with group_id=0, nonce=f9c75852915a, datestamp=1694208720 (Sep 08 2023 21:32:00)
+0007.937 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0007.938 (0) Examining (for databases) backup set with group_id=0, nonce=ff5fc0f5e692, datestamp=1694122049 (Sep 07 2023 21:27:29)
+0007.938 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0007.938 (0) Examining (for databases) backup set with group_id=0, nonce=ff2a0f99363d, datestamp=1694035647 (Sep 06 2023 21:27:27)
+0007.938 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0007.938 (0) Examining (for databases) backup set with group_id=0, nonce=bc711420d4a2, datestamp=1694035199 (Sep 06 2023 21:19:59)
+0007.938 (0) 1694035199: db: this set includes a database (backup_2023-09-06-2119_Elementor_1_bc711420d4a2-db.gz); db count is now 7
+0007.938 (0) 1694035199: db: over retain limit (7); will delete this database
+0007.938 (0) Delete file: backup_2023-09-06-2119_Elementor_1_bc711420d4a2-db.gz, service=none
+0007.938 (0) Deleting local copy (backup_2023-09-06-2119_Elementor_1_bc711420d4a2-db.gz)
+0007.939 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0007.939 (0) Examining (for databases) backup set with group_id=0, nonce=8e297c963db5, datestamp=1694035053 (Sep 06 2023 21:17:33)
+0007.939 (0) Number of backup sets in history: 9; groups (files): 1
+0007.940 (0) Examining (for files) backup set with nonce=c2f29a42c499, datestamp=1694468398 (Sep 11 2023 21:39:58)
+0007.940 (0) This backup set is the backup set just made, so will not be deleted.
+0007.940 (0) This backup set is the backup set just made, so will not be deleted.
+0007.940 (0) This backup set is the backup set just made, so will not be deleted.
+0007.940 (0) This backup set is the backup set just made, so will not be deleted.
+0007.940 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0007.940 (0) Examining (for files) backup set with nonce=0628ba4ced0b, datestamp=1694382127 (Sep 10 2023 21:42:07)
+0007.940 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0007.940 (0) Examining (for files) backup set with nonce=a9789616f19a, datestamp=1694295898 (Sep 09 2023 21:44:58)
+0007.940 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0007.940 (0) Examining (for files) backup set with nonce=c321134a0c1f, datestamp=1694209195 (Sep 08 2023 21:39:55)
+0007.940 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0007.940 (0) Examining (for files) backup set with nonce=f9c75852915a, datestamp=1694208720 (Sep 08 2023 21:32:00)
+0007.940 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0007.941 (0) Examining (for files) backup set with nonce=ff5fc0f5e692, datestamp=1694122049 (Sep 07 2023 21:27:29)
+0007.941 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0007.941 (0) Examining (for files) backup set with nonce=ff2a0f99363d, datestamp=1694035647 (Sep 06 2023 21:27:27)
+0007.941 (0) This backup set remains non-empty (f=0/d=1); will retain in history
+0007.941 (0) Examining (for files) backup set with nonce=bc711420d4a2, datestamp=1694035199 (Sep 06 2023 21:19:59)
+0007.941 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0007.941 (0) Examining (for files) backup set with nonce=8e297c963db5, datestamp=1694035053 (Sep 06 2023 21:17:33)
+0007.941 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0007.941 (0) Retain: saving new backup history (sets now: 9) and finishing retain operation
+0007.942 (0) Resume backup (c2f29a42c499, 0): finish run
+0007.943 (0) Decremented the semaphore (fd) by 1
+0007.943 (0) Semaphore (fd) unlocked
+0007.943 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0007.944 (0) No email will/can be sent - the user has not configured an email address.
+0007.944 (0) The backup succeeded and is now complete

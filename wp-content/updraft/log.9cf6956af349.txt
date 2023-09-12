@@ -1,0 +1,97 @@
+0000.001 () Opened log file at time: Fri, 08 Sep 2023 21:33:28 +0000 on http://localhost:8888/WordPressDev
+0000.001 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.23.10 WP: 6.3 PHP: 7.4.33 (apache2handler, Darwin Fakes-iMac.modem 22.6.0 Darwin Kernel Version 22.6.0: Wed Jul  5 22:22:52 PDT 2023; root:xnu-8796.141.3~6/RELEASE_ARM64_T8103 arm64) MySQL: 5.7.39 (max packet size=33554432) WPLANG: en_AU Server: Apache/2.4.54 (Unix) OpenSSL/1.0.2u PHP/7.4.33 mod_wsgi/3.5 Python/2.7.18 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.11 Perl/v5.30.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 12.5M | 8M) multisite: N openssl: OpenSSL 1.0.2u  20 Dec 2019 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.001 () Free space on disk containing Updraft's temporary directory: 141268.8 MB
+0000.029 () Restore setup, now closing connection and starting restore over AJAX.
+0000.001 () Opened log file at time: Fri, 08 Sep 2023 21:33:28 +0000 on http://localhost:8888/WordPressDev
+0000.001 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.23.10 WP: 6.3 PHP: 7.4.33 (apache2handler, Darwin Fakes-iMac.modem 22.6.0 Darwin Kernel Version 22.6.0: Wed Jul  5 22:22:52 PDT 2023; root:xnu-8796.141.3~6/RELEASE_ARM64_T8103 arm64) MySQL: 5.7.39 (max packet size=33554432) WPLANG: en_AU Server: Apache/2.4.54 (Unix) OpenSSL/1.0.2u PHP/7.4.33 mod_wsgi/3.5 Python/2.7.18 mod_fastcgi/mod_fastcgi-SNAP-0910052141 mod_perl/2.0.11 Perl/v5.30.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 11.5M | 14M) multisite: N openssl: OpenSSL 1.0.2u  20 Dec 2019 mcrypt: N LANG:  ZipArchive::addFile: Y
+0000.001 () Free space on disk containing Updraft's temporary directory: 141268.1 MB
+0000.001 () Ensuring WP_Filesystem is setup for a restore
+0000.002 () WP_Filesystem is setup and ready for a restore
+0000.002 () Restore job started. Entities to restore: db. Restore options: {"include_unspecified_tables":false,"tables_to_restore":["wp_options","wp_users","wp_usermeta","wp_commentmeta","wp_comments","wp_links","wp_postmeta","wp_posts","wp_term_relationships","wp_term_taxonomy","wp_termmeta","wp_terms","wp_FinalTiles_gallery","wp_FinalTiles_gallery_images","wp_booking","wp_booking_dates_props","wp_bookingdates","wp_e_events"],"tables_to_skip":[],"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.003 () Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.004 () Entity: db
+0000.004 () restore_backup(backup_file=backup_2023-09-08-2132_Elementor_1_f9c75852915a-db.gz, type=db, info=a:0:{}, last_one=1)
+0000.004 () Unpacking backup... (backup_2023-09-08-2132_Elementor_1_f9c75852915a-db.gz, 6 Mb)
+0000.009 () Database successfully unpacked
+0000.009 () Restoring the database (on a large site this can take a long time - if it times out (which can happen if your web hosting company has configured your hosting to limit resources) then you should use a different method, such as phpMyAdmin)...
+0000.009 () Using direct MySQL access; value of use_mysqli is: 1
+0000.009 () SQL compatibility mode is: NO_AUTO_VALUE_ON_ZERO,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+0000.019 () Max packet size: 32 MB
+0000.019 () Entering maintenance mode
+0000.019 () Enabling Maintenance mode&#8230;
+0000.021 () Backup of: http://localhost:8888/WordPressDev
+0000.021 () Content URL: http://localhost:8888/WordPressDev/wp-content
+0000.021 () Uploads URL: http://localhost:8888/WordPressDev/wp-content/uploads
+0000.021 () Old table prefix: wp_
+0000.021 () UpdraftPlus plugin slug: updraftplus/updraftplus.php
+0000.021 () Site information: multisite=0
+0000.021 () Site information: sql_mode=NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+0000.021 () Skipped tables: columns_priv, db, engine_cost, event, func, general_log, gtid_executed, help_category, help_keyword, help_relation, help_topic, innodb_index_stats, innodb_table_stats, ndb_binlog_index, plugin, proc, procs_priv, proxies_priv, server_cost, servers, slave_master_info, slave_relay_log_info, slave_worker_info, slow_log, tables_priv, time_zone, time_zone_leap_second, time_zone_name, time_zone_transition, time_zone_transition_type, user
+0000.021 () New table prefix: hx_
+0000.022 () Processing table (InnoDB): wp_options - will restore as: hx_options
+0000.049 () Atomic restore: dropping original table (wp_options)
+0000.051 () Atomic restore: renaming new table (hx_options) to final table name (wp_options)
+0000.051 () Restoring prior UD configuration (table: wp_options; keys: 4)
+0000.054 () Processing table (InnoDB): wp_users - will restore as: hx_users
+0000.064 () Atomic restore: dropping original table (wp_users)
+0000.066 () Atomic restore: renaming new table (hx_users) to final table name (wp_users)
+0000.066 () Processing table (InnoDB): wp_usermeta - will restore as: hx_usermeta
+0000.075 () Atomic restore: dropping original table (wp_usermeta)
+0000.077 () Atomic restore: renaming new table (hx_usermeta) to final table name (wp_usermeta)
+0000.078 () Processing table (InnoDB): wp_commentmeta - will restore as: hx_commentmeta
+0000.085 () Atomic restore: dropping original table (wp_commentmeta)
+0000.086 () Atomic restore: renaming new table (hx_commentmeta) to final table name (wp_commentmeta)
+0000.087 () Processing table (InnoDB): wp_comments - will restore as: hx_comments
+0000.097 () Atomic restore: dropping original table (wp_comments)
+0000.099 () Atomic restore: renaming new table (hx_comments) to final table name (wp_comments)
+0000.100 () Processing table (InnoDB): wp_links - will restore as: hx_links
+0000.108 () Atomic restore: dropping original table (wp_links)
+0000.109 () Atomic restore: renaming new table (hx_links) to final table name (wp_links)
+0000.109 () Processing table (InnoDB): wp_postmeta - will restore as: hx_postmeta
+0000.349 () Atomic restore: dropping original table (wp_postmeta)
+0000.355 () Atomic restore: renaming new table (hx_postmeta) to final table name (wp_postmeta)
+0000.356 () Processing table (InnoDB): wp_posts - will restore as: hx_posts
+0000.393 () Database queries processed: 50 in 0.38 seconds
+0000.708 () Atomic restore: dropping original table (wp_posts)
+0000.715 () Atomic restore: renaming new table (hx_posts) to final table name (wp_posts)
+0000.715 () Processing table (InnoDB): wp_term_relationships - will restore as: hx_term_relationships
+0000.724 () Atomic restore: dropping original table (wp_term_relationships)
+0000.726 () Atomic restore: renaming new table (hx_term_relationships) to final table name (wp_term_relationships)
+0000.726 () Processing table (InnoDB): wp_term_taxonomy - will restore as: hx_term_taxonomy
+0000.737 () Atomic restore: dropping original table (wp_term_taxonomy)
+0000.739 () Atomic restore: renaming new table (hx_term_taxonomy) to final table name (wp_term_taxonomy)
+0000.739 () Processing table (InnoDB): wp_termmeta - will restore as: hx_termmeta
+0000.749 () Atomic restore: dropping original table (wp_termmeta)
+0000.751 () Atomic restore: renaming new table (hx_termmeta) to final table name (wp_termmeta)
+0000.752 () Processing table (InnoDB): wp_terms - will restore as: hx_terms
+0000.758 () Atomic restore: dropping original table (wp_terms)
+0000.760 () Atomic restore: renaming new table (hx_terms) to final table name (wp_terms)
+0000.761 () Processing table (InnoDB): wp_FinalTiles_gallery - will restore as: hx_FinalTiles_gallery
+0000.768 () Atomic restore: dropping original table (wp_FinalTiles_gallery)
+0000.769 () Database queries processed: 100 in 0.76 seconds
+0000.769 () Atomic restore: renaming new table (hx_FinalTiles_gallery) to final table name (wp_FinalTiles_gallery)
+0000.770 () Processing table (InnoDB): wp_FinalTiles_gallery_images - will restore as: hx_FinalTiles_gallery_images
+0000.778 () Atomic restore: dropping original table (wp_FinalTiles_gallery_images)
+0000.779 () Atomic restore: renaming new table (hx_FinalTiles_gallery_images) to final table name (wp_FinalTiles_gallery_images)
+0000.779 () Processing table (InnoDB): wp_booking - will restore as: hx_booking
+0000.785 () Atomic restore: dropping original table (wp_booking)
+0000.786 () Atomic restore: renaming new table (hx_booking) to final table name (wp_booking)
+0000.787 () Processing table (InnoDB): wp_booking_dates_props - will restore as: hx_booking_dates_props
+0000.792 () Atomic restore: dropping original table (wp_booking_dates_props)
+0000.792 () Atomic restore: renaming new table (hx_booking_dates_props) to final table name (wp_booking_dates_props)
+0000.793 () Processing table (InnoDB): wp_bookingdates - will restore as: hx_bookingdates
+0000.799 () Atomic restore: dropping original table (wp_bookingdates)
+0000.800 () Atomic restore: renaming new table (hx_bookingdates) to final table name (wp_bookingdates)
+0000.801 () Processing table (InnoDB): wp_e_events - will restore as: hx_e_events
+0000.968 () Unlocking database and leaving maintenance mode
+0000.968 () Disabling Maintenance mode&#8230;
+0000.968 () Atomic restore: dropping original table (wp_e_events)
+0000.969 () Atomic restore: renaming new table (hx_e_events) to final table name (wp_e_events)
+0000.970 () Finished: lines processed: 114 in 0.96 seconds
+0000.970 () Cleaning up rubbish...
+0000.970 () Begin search and replace (updraftplus_restored_db)
+0000.970 () [Database-replace-site-url] Database: search and replace site URL
+0000.970 () This option was not selected.
+0000.977 () Elementor's clear cache method exists and will be executed
+0000.988 () Restore successful!
+0000.988 () Restore successful
